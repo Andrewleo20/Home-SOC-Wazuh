@@ -1,0 +1,105 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.07.08",
+  "_id": "LawyQZ8B0P4RjFAKkvNu",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.56.20",
+      "name": "DESKTOP-KBSU3KD",
+      "id": "001"
+    },
+    "manager": {
+      "name": "Wazuh-Manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "curl.exe",
+          "image": "C:\\\\Windows\\\\System32\\\\curl.exe",
+          "product": "The curl executable",
+          "parentProcessGuid": "{4be8499f-216a-6a4e-eb08-000000001a00}",
+          "description": "The curl executable",
+          "logonGuid": "{4be8499f-c2a3-6a4d-4540-020000000000}",
+          "parentCommandLine": "\\\"cmd.exe\\\" /c C:\\\\Windows\\\\System32\\\\Curl.exe -s -A \\\"HttpBrowser/1.0\\\" -m3 www.google.com &gt;nul 2&gt;&amp;1 &amp; C:\\\\Windows\\\\System32\\\\Curl.exe -s -A \\\"Wget/1.9+cvs-stable (Red Hat modified)\\\" -m3 www.google.com &gt;nul 2&gt;&amp;1 &amp; C:\\\\Windows\\\\System32\\\\Curl.exe -s -A \\\"Opera/8.81 (Windows NT 6.0; U; en)\\\" -m3 www.google.com &gt;nul 2&gt;&amp;1 &amp; C:\\\\Windows\\\\System32\\\\Curl.exe -s -A \\\"*&lt;|&gt;*\\\" -m3 www.google.com &gt;nul 2&gt;&amp;1",
+          "processGuid": "{4be8499f-216d-6a4e-f008-000000001a00}",
+          "logonId": "0x24045",
+          "parentProcessId": "3508",
+          "processId": "3268",
+          "currentDirectory": "C:\\\\Users\\\\Leo\\\\AppData\\\\Local\\\\Temp\\\\",
+          "utcTime": "2026-07-08 10:07:41.077",
+          "hashes": "MD5=2B01E90AB772A731D14226A8CF0D2F1D,SHA256=26732957D586965A2D37D24AC8F384C6502A730DFD9D35212980712A20DC2291,IMPHASH=B0479DCAC6A0FB5780B42AAE7CBF2B55",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "company": "curl, https://curl.se/",
+          "commandLine": "C:\\\\Windows\\\\System32\\\\Curl.exe  -s -A \\\"*&lt;|&gt;*\\\" -m3 www.google.com",
+          "integrityLevel": "High",
+          "fileVersion": "8.14.1",
+          "user": "DESKTOP-KBSU3KD\\\\Leo",
+          "terminalSessionId": "1",
+          "parentUser": "DESKTOP-KBSU3KD\\\\Leo"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-07-08 10:07:41.077\r\nProcessGuid: {4be8499f-216d-6a4e-f008-000000001a00}\r\nProcessId: 3268\r\nImage: C:\\Windows\\System32\\curl.exe\r\nFileVersion: 8.14.1\r\nDescription: The curl executable\r\nProduct: The curl executable\r\nCompany: curl, https://curl.se/\r\nOriginalFileName: curl.exe\r\nCommandLine: C:\\Windows\\System32\\Curl.exe  -s -A \"*<|>*\" -m3 www.google.com \r\nCurrentDirectory: C:\\Users\\Leo\\AppData\\Local\\Temp\\\r\nUser: DESKTOP-KBSU3KD\\Leo\r\nLogonGuid: {4be8499f-c2a3-6a4d-4540-020000000000}\r\nLogonId: 0x24045\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=2B01E90AB772A731D14226A8CF0D2F1D,SHA256=26732957D586965A2D37D24AC8F384C6502A730DFD9D35212980712A20DC2291,IMPHASH=B0479DCAC6A0FB5780B42AAE7CBF2B55\r\nParentProcessGuid: {4be8499f-216a-6a4e-eb08-000000001a00}\r\nParentProcessId: 3508\r\nParentImage: C:\\Windows\\System32\\cmd.exe\r\nParentCommandLine: \"cmd.exe\" /c C:\\Windows\\System32\\Curl.exe -s -A \"HttpBrowser/1.0\" -m3 www.google.com >nul 2>&1 & C:\\Windows\\System32\\Curl.exe -s -A \"Wget/1.9+cvs-stable (Red Hat modified)\" -m3 www.google.com >nul 2>&1 & C:\\Windows\\System32\\Curl.exe -s -A \"Opera/8.81 (Windows NT 6.0; U; en)\" -m3 www.google.com >nul 2>&1 & C:\\Windows\\System32\\Curl.exe -s -A \"*<|>*\" -m3 www.google.com >nul 2>&1\r\nParentUser: DESKTOP-KBSU3KD\\Leo\"",
+          "version": "5",
+          "systemTime": "2026-07-08T10:07:41.0803247Z",
+          "eventRecordID": "34521",
+          "threadID": "4088",
+          "computer": "DESKTOP-KBSU3KD",
+          "task": "1",
+          "processID": "3780",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 4,
+      "mail": false,
+      "level": 3,
+      "description": "Suspicious Windows cmd shell execution",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Account Discovery",
+          "Windows Command Shell"
+        ],
+        "id": [
+          "T1087",
+          "T1059.003"
+        ],
+        "tactic": [
+          "Discovery",
+          "Execution"
+        ]
+      },
+      "id": "92032"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1783505259.4350692",
+    "timestamp": "2026-07-08T10:07:39.198+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-07-08T10:07:39.198Z"
+    ]
+  },
+  "sort": [
+    1783505259198
+  ]
+}

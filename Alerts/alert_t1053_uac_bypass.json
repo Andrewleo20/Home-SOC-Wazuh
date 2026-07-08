@@ -1,0 +1,102 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.07.08",
+  "_id": "UqxHQZ8B0P4RjFAKifMl",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.56.20",
+      "name": "DESKTOP-KBSU3KD",
+      "id": "001"
+    },
+    "manager": {
+      "name": "Wazuh-Manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "Cmd.Exe",
+          "image": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{4be8499f-e597-6a4d-8804-000000001a00}",
+          "description": "Windows Command Processor",
+          "logonGuid": "{4be8499f-c2a3-6a4d-4540-020000000000}",
+          "parentCommandLine": "\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\"",
+          "processGuid": "{4be8499f-26bf-6a4e-3309-000000001a00}",
+          "logonId": "0x24045",
+          "parentProcessId": "2760",
+          "processId": "12364",
+          "currentDirectory": "C:\\\\Users\\\\Leo\\\\AppData\\\\Local\\\\Temp\\\\",
+          "utcTime": "2026-07-08 10:30:23.812",
+          "hashes": "MD5=FC01B4963B10D5D1A4812184B0998E8F,SHA256=65C9EC61A5B10E7EEC76A7A961766B86BB93604EF18C5D1FE8AC53B4E53EF17A,IMPHASH=B0F049C014592B156EB1FA857E99CEB9",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+          "company": "Microsoft Corporation",
+          "commandLine": "\\\"cmd.exe\\\" /c SCHTASKS /Create /SC ONCE /TN spawn /TR C:\\\\windows\\\\system32\\\\cmd.exe /ST 20:10",
+          "integrityLevel": "High",
+          "fileVersion": "10.0.26100.5074 (WinBuild.160101.0800)",
+          "user": "DESKTOP-KBSU3KD\\\\Leo",
+          "terminalSessionId": "1",
+          "parentUser": "DESKTOP-KBSU3KD\\\\Leo"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-07-08 10:30:23.812\r\nProcessGuid: {4be8499f-26bf-6a4e-3309-000000001a00}\r\nProcessId: 12364\r\nImage: C:\\Windows\\System32\\cmd.exe\r\nFileVersion: 10.0.26100.5074 (WinBuild.160101.0800)\r\nDescription: Windows Command Processor\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: Cmd.Exe\r\nCommandLine: \"cmd.exe\" /c SCHTASKS /Create /SC ONCE /TN spawn /TR C:\\windows\\system32\\cmd.exe /ST 20:10\r\nCurrentDirectory: C:\\Users\\Leo\\AppData\\Local\\Temp\\\r\nUser: DESKTOP-KBSU3KD\\Leo\r\nLogonGuid: {4be8499f-c2a3-6a4d-4540-020000000000}\r\nLogonId: 0x24045\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=FC01B4963B10D5D1A4812184B0998E8F,SHA256=65C9EC61A5B10E7EEC76A7A961766B86BB93604EF18C5D1FE8AC53B4E53EF17A,IMPHASH=B0F049C014592B156EB1FA857E99CEB9\r\nParentProcessGuid: {4be8499f-e597-6a4d-8804-000000001a00}\r\nParentProcessId: 2760\r\nParentImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nParentCommandLine: \"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \r\nParentUser: DESKTOP-KBSU3KD\\Leo\"",
+          "version": "5",
+          "systemTime": "2026-07-08T10:30:23.8166471Z",
+          "eventRecordID": "34577",
+          "threadID": "4088",
+          "computer": "DESKTOP-KBSU3KD",
+          "task": "1",
+          "processID": "3780",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": false,
+      "level": 4,
+      "description": "Powershell process spawned Windows command shell instance",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Windows Command Shell"
+        ],
+        "id": [
+          "T1059.003"
+        ],
+        "tactic": [
+          "Execution"
+        ]
+      },
+      "id": "92004"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1783506630.4504656",
+    "timestamp": "2026-07-08T10:30:30.087+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-07-08T10:30:30.087Z"
+    ]
+  },
+  "sort": [
+    1783506630087
+  ]
+}

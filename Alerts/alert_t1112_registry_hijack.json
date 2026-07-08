@@ -1,0 +1,104 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.07.08",
+  "_id": "HKxKQZ8B0P4RjFAK1fSN",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.56.20",
+      "name": "DESKTOP-KBSU3KD",
+      "id": "001"
+    },
+    "manager": {
+      "name": "Wazuh-Manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "reg.exe",
+          "image": "C:\\\\Windows\\\\System32\\\\reg.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{4be8499f-2798-6a4e-700a-000000001a00}",
+          "description": "Registry Console Tool",
+          "logonGuid": "{4be8499f-c2a3-6a4d-4540-020000000000}",
+          "parentCommandLine": "\\\"cmd.exe\\\" /c reg add \\\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\App Paths\\\\msedge.exe\\\" /t REG_SZ /d C:\\\\Windows\\\\System32\\\\notepad.exe /f",
+          "processGuid": "{4be8499f-2798-6a4e-720a-000000001a00}",
+          "logonId": "0x24045",
+          "parentProcessId": "4896",
+          "processId": "5628",
+          "currentDirectory": "C:\\\\Users\\\\Leo\\\\AppData\\\\Local\\\\Temp\\\\",
+          "utcTime": "2026-07-08 10:34:00.844",
+          "hashes": "MD5=F6E3559DDDDCCC843A12CFD50178C554,SHA256=EF37663B44AC66920C6F33694DEEA01ACB78AE3F3012884819373FA04C3EB5F0,IMPHASH=2DC6AE94704E0DBEAFC5A2BB00BD87F0",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "company": "Microsoft Corporation",
+          "commandLine": "reg  add \\\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\App Paths\\\\msedge.exe\\\" /t REG_SZ /d C:\\\\Windows\\\\System32\\\\notepad.exe /f",
+          "integrityLevel": "High",
+          "fileVersion": "10.0.26100.5074 (WinBuild.160101.0800)",
+          "user": "DESKTOP-KBSU3KD\\\\Leo",
+          "terminalSessionId": "1",
+          "parentUser": "DESKTOP-KBSU3KD\\\\Leo"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-07-08 10:34:00.844\r\nProcessGuid: {4be8499f-2798-6a4e-720a-000000001a00}\r\nProcessId: 5628\r\nImage: C:\\Windows\\System32\\reg.exe\r\nFileVersion: 10.0.26100.5074 (WinBuild.160101.0800)\r\nDescription: Registry Console Tool\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: reg.exe\r\nCommandLine: reg  add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\msedge.exe\" /t REG_SZ /d C:\\Windows\\System32\\notepad.exe /f\r\nCurrentDirectory: C:\\Users\\Leo\\AppData\\Local\\Temp\\\r\nUser: DESKTOP-KBSU3KD\\Leo\r\nLogonGuid: {4be8499f-c2a3-6a4d-4540-020000000000}\r\nLogonId: 0x24045\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=F6E3559DDDDCCC843A12CFD50178C554,SHA256=EF37663B44AC66920C6F33694DEEA01ACB78AE3F3012884819373FA04C3EB5F0,IMPHASH=2DC6AE94704E0DBEAFC5A2BB00BD87F0\r\nParentProcessGuid: {4be8499f-2798-6a4e-700a-000000001a00}\r\nParentProcessId: 4896\r\nParentImage: C:\\Windows\\System32\\cmd.exe\r\nParentCommandLine: \"cmd.exe\" /c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\msedge.exe\" /t REG_SZ /d C:\\Windows\\System32\\notepad.exe /f\r\nParentUser: DESKTOP-KBSU3KD\\Leo\"",
+          "version": "5",
+          "systemTime": "2026-07-08T10:34:00.8484947Z",
+          "eventRecordID": "34809",
+          "threadID": "4088",
+          "computer": "DESKTOP-KBSU3KD",
+          "task": "1",
+          "processID": "3780",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 94,
+      "mail": false,
+      "level": 10,
+      "description": "Value added to registry key has Base64-like pattern",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Obfuscated Files or Information",
+          "Modify Registry"
+        ],
+        "id": [
+          "T1027",
+          "T1112"
+        ],
+        "tactic": [
+          "Defense Evasion"
+        ]
+      },
+      "id": "92041"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1783506848.5776831",
+    "timestamp": "2026-07-08T10:34:08.919+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-07-08T10:34:08.919Z"
+    ]
+  },
+  "sort": [
+    1783506848919
+  ]
+}

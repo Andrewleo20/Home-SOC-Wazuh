@@ -1,0 +1,105 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.07.08",
+  "_id": "MaxMQZ8B0P4RjFAKDvSv",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.56.20",
+      "name": "DESKTOP-KBSU3KD",
+      "id": "001"
+    },
+    "manager": {
+      "name": "Wazuh-Manager"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "Cmd.Exe",
+          "image": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{4be8499f-27f0-6a4e-8d0a-000000001a00}",
+          "description": "Windows Command Processor",
+          "logonGuid": "{4be8499f-c2a3-6a4d-4540-020000000000}",
+          "parentCommandLine": "\\\"cmd.exe\\\" /c echo \\\"\\\" | \\\"C:\\\\AtomicRedTeam\\\\atomics\\\\..\\\\ExternalPayloads\\\\plink.exe\\\" -batch \\\"atomic.local\\\" -ssh -l root -pw \\\"password\\\" \\\"esxcli system account list\\\"",
+          "processGuid": "{4be8499f-27f0-6a4e-8f0a-000000001a00}",
+          "logonId": "0x24045",
+          "parentProcessId": "3020",
+          "processId": "5284",
+          "currentDirectory": "C:\\\\Users\\\\Leo\\\\AppData\\\\Local\\\\Temp\\\\",
+          "utcTime": "2026-07-08 10:35:28.428",
+          "hashes": "MD5=FC01B4963B10D5D1A4812184B0998E8F,SHA256=65C9EC61A5B10E7EEC76A7A961766B86BB93604EF18C5D1FE8AC53B4E53EF17A,IMPHASH=B0F049C014592B156EB1FA857E99CEB9",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "company": "Microsoft Corporation",
+          "commandLine": "C:\\\\WINDOWS\\\\system32\\\\cmd.exe  /S /D /c\\\" echo \\\"\\\" \\\"",
+          "integrityLevel": "High",
+          "fileVersion": "10.0.26100.5074 (WinBuild.160101.0800)",
+          "user": "DESKTOP-KBSU3KD\\\\Leo",
+          "terminalSessionId": "1",
+          "parentUser": "DESKTOP-KBSU3KD\\\\Leo"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-07-08 10:35:28.428\r\nProcessGuid: {4be8499f-27f0-6a4e-8f0a-000000001a00}\r\nProcessId: 5284\r\nImage: C:\\Windows\\System32\\cmd.exe\r\nFileVersion: 10.0.26100.5074 (WinBuild.160101.0800)\r\nDescription: Windows Command Processor\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: Cmd.Exe\r\nCommandLine: C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" echo \"\" \"\r\nCurrentDirectory: C:\\Users\\Leo\\AppData\\Local\\Temp\\\r\nUser: DESKTOP-KBSU3KD\\Leo\r\nLogonGuid: {4be8499f-c2a3-6a4d-4540-020000000000}\r\nLogonId: 0x24045\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=FC01B4963B10D5D1A4812184B0998E8F,SHA256=65C9EC61A5B10E7EEC76A7A961766B86BB93604EF18C5D1FE8AC53B4E53EF17A,IMPHASH=B0F049C014592B156EB1FA857E99CEB9\r\nParentProcessGuid: {4be8499f-27f0-6a4e-8d0a-000000001a00}\r\nParentProcessId: 3020\r\nParentImage: C:\\Windows\\System32\\cmd.exe\r\nParentCommandLine: \"cmd.exe\" /c echo \"\" | \"C:\\AtomicRedTeam\\atomics\\..\\ExternalPayloads\\plink.exe\" -batch \"atomic.local\" -ssh -l root -pw \"password\" \"esxcli system account list\"\r\nParentUser: DESKTOP-KBSU3KD\\Leo\"",
+          "version": "5",
+          "systemTime": "2026-07-08T10:35:28.4326615Z",
+          "eventRecordID": "34839",
+          "threadID": "4088",
+          "computer": "DESKTOP-KBSU3KD",
+          "task": "1",
+          "processID": "3780",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 14,
+      "mail": false,
+      "level": 3,
+      "description": "Suspicious Windows cmd shell execution",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Account Discovery",
+          "Windows Command Shell"
+        ],
+        "id": [
+          "T1087",
+          "T1059.003"
+        ],
+        "tactic": [
+          "Discovery",
+          "Execution"
+        ]
+      },
+      "id": "92032"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1783506929.5886615",
+    "timestamp": "2026-07-08T10:35:29.007+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-07-08T10:35:29.007Z"
+    ]
+  },
+  "sort": [
+    1783506929007
+  ]
+}
