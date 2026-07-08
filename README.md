@@ -103,8 +103,3 @@ For each technique: what you ran → what alert fired → the Wazuh rule ID → 
 Wazuh 4.9, Sysmon (SwiftOnSecurity config), VirtualBox, Windows 10/11, MITRE ATT&CK Navigator
 
 ---
-
-## Resume Bullets (for reference)
-- "Built a home SOC lab (Wazuh, Sysmon, Windows) from scratch, including VM networking, agent deployment, and troubleshooting a live log-ingestion pipeline failure."
-- "Simulated 5 MITRE ATT&CK techniques using Atomic Red Team (credential dumping, UAC bypass, registry persistence, C2 traffic, process injection) and investigated each Wazuh alert against raw command-line evidence."
-- "Identified and documented a critical-severity false positive and two ATT&CK mis-mappings in Wazuh's default ruleset, with root-cause analysis and recommended rule tuning."
